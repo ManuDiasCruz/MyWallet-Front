@@ -2,6 +2,8 @@ import {useState, useContext} from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
+import styled from "styled-components"
+
 import UserContext from "../../contexts/UserContext"
 
 export default function DepositPage() {
@@ -35,8 +37,8 @@ export default function DepositPage() {
   }
 
   return (
-    <div>
-      <h1>Nova entrada</h1>
+    <Main>
+      <Title>Nova entrada</Title>
       <form>
         <input 
           type="number"
@@ -54,6 +56,51 @@ export default function DepositPage() {
 
         <button type="submit" onClick={saveDeposit}>Salvar entrada</button>
       </form>
-    </div>
+    </Main>
   )
 }
+
+
+
+const Main = styled.div`
+  width: 326px;
+  margin: 25px;
+
+  form{
+    margin-top:25px;
+  }
+
+  input{
+    width: 100%;
+		height: 58px;
+		border-radius: 5px;
+		font-size: 20px;
+		line-height: 23px;
+		font-weight: 700;
+		color: #000;
+		padding: 18px 15px;
+		margin-bottom: 13px;
+  }
+
+  button {
+		width: 100%;
+		height: 46px;
+		background: #a328d6;
+		border-radius: 5px;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 23px;
+		color: #FFFFFF;
+  }
+`
+
+const Title = styled.h1`
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+
+  color: #FFFFFF;
+`

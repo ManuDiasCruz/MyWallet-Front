@@ -15,8 +15,8 @@ export default function App(){
     const [user, setUser] = useState(null)
     return(
         <UserContext.Provider value={{user, setUser}}>
+            <GlobalStyles/>     
             <BrowserRouter>
-                <GlobalStyles>
                     <Routes>
                         <Route path="/" element={<MainPage />}></Route>
                         <Route path="/sign-up" element={<RegisterPage />}></Route>
@@ -24,7 +24,6 @@ export default function App(){
                         <Route path="/deposit" element={<DepositPage />}></Route>
                         <Route path="/withdraw" element={<WithdrawPage />}></Route>
                     </Routes>
-                </GlobalStyles>
             </BrowserRouter>
         </UserContext.Provider>
 

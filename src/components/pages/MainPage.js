@@ -17,7 +17,7 @@ export default function MainPage(){
     async function login(e){
         e.preventDefault()
         try {
-            const res = await axios.post("http:localhost:5000/sign-in", {email, password})
+            const res = await axios.post("http://localhost:5000/sign-in", {email, password})
             const {token, name} = res.data
             setUser({name, token})
             navigator("/home")
@@ -27,7 +27,7 @@ export default function MainPage(){
     }
 
     return( 
-        <>
+        <Main>
             <H1>My Wallet</H1>
             <Form>
                 <input 
@@ -45,9 +45,13 @@ export default function MainPage(){
                 <button type="submit" onClick={login}>Entrar</button>
             </Form>
             <Link to="sign-up"><LinkStyle>Primeira vez? cadastre-se!</LinkStyle></Link>
-        </>
+        </Main>
     )
 }
+
+const Main = styled.main`
+    margin: 25px;
+`
 
 const H1 = styled.h1`
     font-family: "Saira Stencil One", cursive;

@@ -15,7 +15,7 @@ export default function RegisterPage(){
     async function register(e){
         e.preventDefault()
         try {
-            console.log({username: name, email, password, repeatPassword})
+            console.log({name, email, password, repeatPassword})
             await axios.post("http://localhost:5000/sign-up", {name, email, password, repeatPassword})
             alert ("Register ok")
             navigator("/")
@@ -25,7 +25,7 @@ export default function RegisterPage(){
     }
 
     return( 
-        <>
+        <Main>
             <H1>My Wallet</H1>
             <Form>
                 <input 
@@ -55,9 +55,13 @@ export default function RegisterPage(){
                 <button type="submit" onClick={register}>Cadastrar</button>
             </Form>
             <Link to="sign-in"><LinkStyle>Já tem uma conta? Entre agora!</LinkStyle></Link>
-        </>
+        </Main>
     )
 }
+
+const Main = styled.main`
+    margin: 25px;
+`
 
 const H1 = styled.h1`
     font-family: "Saira Stencil One", cursive;
