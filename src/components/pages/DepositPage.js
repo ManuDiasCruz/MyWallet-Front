@@ -60,8 +60,6 @@ export default function DepositPage() {
   )
 }
 
-
-
 const Main = styled.div`
   width: 326px;
   margin: 25px;
